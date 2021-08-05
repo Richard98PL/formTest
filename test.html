@@ -1,0 +1,19 @@
+<html>
+<iframe id = 'myiframe' src="https://go.yit.fi/l/160011/2021-08-05/j1t6dk" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
+</html>
+
+<script>
+    let map = new Map();
+
+    Array.from(document.getElementsByTagName('iframe')).forEach( element => {
+      map.set(element,true);
+      element.onload = function() {
+        if(map.get(element)){
+          element.src += window.location.search;
+          map.set(element,false);
+        }
+      }
+    });
+
+</script>
+
